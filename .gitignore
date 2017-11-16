@@ -1,0 +1,14 @@
+.DS_Store
+.tmp
+.git
+node_modules/
+.settings
+*.log
+dist/
+.idea
+semantic
+.vscode
+bin/
+src/config.js
+out.png
+src/run.js
