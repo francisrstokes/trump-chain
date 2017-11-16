@@ -3,8 +3,8 @@ Generates a trump-esque speech using a markov chain trained on previous speeches
 ## Install
 
 ```bash
-git clone https://github.com/francisrstokes/trump-speech-chain.git
-cd trump-speech-chain
+git clone https://github.com/francisrstokes/trump-chain.git
+cd trump-chain
 npm i
 node src
 ```
