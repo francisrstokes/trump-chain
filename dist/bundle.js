@@ -90,6 +90,7 @@ var trumpChain;
 var $trumpContainer = document.querySelector('#trump-container');
 var $generate = document.querySelector('#generate');
 var $choices = document.querySelector('#choose-combo');
+var $back = document.querySelector('#back');
 var $question = document.querySelector('.question');
 var $cross = document.querySelector('.cross');
 var $howItWorks = document.querySelector('#how-it-works');
@@ -99,6 +100,12 @@ $question.addEventListener('click', function () {
 $cross.addEventListener('click', function () {
   $howItWorks.className = 'hide';
 });
+$back.addEventListener('click', function () {
+  $choices.className = '';
+  $generate.className = 'hide';
+  $trumpContainer.className = 'hide';
+  $back.className = 'hide';
+});
 
 var chooseEvent = function chooseEvent(chosenType) {
   return function () {
@@ -106,6 +113,7 @@ var chooseEvent = function chooseEvent(chosenType) {
     $choices.className = 'hide';
     $generate.className = '';
     $trumpContainer.className = '';
+    $back.className = '';
     $trumpContainer.innerHTML = getTrumpText();
   };
 };
