@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TrumpChain</title>
+    <meta charset="utf-8">
+    <meta content="author" description="Pusher of codes">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
+    <style>
+html, body, #app {
+  height: 100%;
+}
+#app {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../img/angry-trump.png');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.hide {
+  display:none !important;
+}
+
+#trump-container {
+  display:flex;
+  width: 70%;
+}
+
+#choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+#choose-combo {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choice {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30vmin;
+  height: 30vmin;
+  border-radius: 100%;
+  border: 10px solid black;
+  box-sizing: border-box;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#choice-hitler {
+  background-image: url('../img/hitler.jpg');
+}
+
+#choice-jesus {
+  background-image: url('../img/jesus.jpg');
+}
+
+.name-container {
+  display: flex;
+  font-size: 6vh;
+}
+
+.trump-text {
+  display: flex;
+  font-size: 4vh;
+  max-height: calc(100% - 140px);
+  overflow-y: scroll;
+}
+
+#generate {
+  cursor: pointer;
+  background-color: #fff;
+  border: 3px solid #000;
+  padding: 20px 40px 20px 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 4vh;
+}
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="choose-combo">
+        <h1>Combine Trump + ?</h1>
+        <div id="choices">
+          <div id="choice-jesus" class="choice">
+            <div class="name-container">Jesus</div>
+          </div>
+          <div id="choice-hitler" class="choice">
+            <div class="name-container">Hitler</div>
+          </div>
+        </div>
+      </div>
+      <div id="trump-container" class="hide"></div>
+      <div id="generate" class="hide">Generate Trump Text</div>
+    </div>
+    <script src="../dist/bundle.js"></script>
+  </body>
+</html>
