@@ -1,49 +1,14 @@
-import trainingData from '../data/trump/combined.txt';
-import jesus from '../data/jesus/jesus.txt';
-import hitler from '../data/hitler/hitler.txt';
 import Markov from 'markov-chains-text';
 import { genArray, rndIntB, choose } from 'creative-code-toolkit';
-
-const data = {
-  jesus,
-  hitler
-};
+import data from '../data';
+import view from './view';
 
 let trumpChain;
-const $trumpContainer = document.querySelector('#trump-container');
-const $generate = document.querySelector('#generate');
-const $choices = document.querySelector('#choose-combo');
-const $back = document.querySelector('#back');
-const $question = document.querySelector('.question');
-const $cross = document.querySelector('.cross');
-const $howItWorks = document.querySelector('#how-it-works');
-
-$question.addEventListener('click', () => {
-  $howItWorks.className = '';
-});
-
-$cross.addEventListener('click', () => {
-  $howItWorks.className = 'hide';
-});
-
-$back.addEventListener('click', () => {
-  $choices.className = '';
-  $generate.className = 'hide';
-  $trumpContainer.className = 'hide';
-  $back.className = 'hide';
-});
-
 const chooseEvent = (chosenType) => () => {
-  trumpChain = new Markov(trainingData + '\n' + data[chosenType]);
-  $choices.className = 'hide';
-  $generate.className = '';
-  $trumpContainer.className = '';
-  $back.className = '';
-  $trumpContainer.innerHTML = getTrumpText();
+  trumpChain = new Markov(data.trump + '\n' + data[chosenType]);
+  view.showSpeech();
+  view.setTrumpText(getTrumpText());
 };
-
-document.querySelector('#choice-hitler').addEventListener('click', chooseEvent('hitler'));
-document.querySelector('#choice-jesus').addEventListener('click', chooseEvent('jesus'));
 
 const getTrumpText = () => {
   const createText = () =>
@@ -55,6 +20,6 @@ const getTrumpText = () => {
   return `<div class="trump-text">My fellow Americans.<br>${createText()}</div>`;
 };
 
-$generate.addEventListener('click', () => {
-  $trumpContainer.innerHTML = getTrumpText();
-});
+view.addChoiceEvent('hitler', chooseEvent);
+view.addChoiceEvent('jesus', chooseEvent);
+view.setGenerateTextFunc(getTrumpText);
