@@ -90,6 +90,15 @@ var trumpChain;
 var $trumpContainer = document.querySelector('#trump-container');
 var $generate = document.querySelector('#generate');
 var $choices = document.querySelector('#choose-combo');
+var $question = document.querySelector('.question');
+var $cross = document.querySelector('.cross');
+var $howItWorks = document.querySelector('#how-it-works');
+$question.addEventListener('click', function () {
+  $howItWorks.className = '';
+});
+$cross.addEventListener('click', function () {
+  $howItWorks.className = 'hide';
+});
 
 var chooseEvent = function chooseEvent(chosenType) {
   return function () {

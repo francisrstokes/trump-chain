@@ -13,6 +13,17 @@ let trumpChain;
 const $trumpContainer = document.querySelector('#trump-container');
 const $generate = document.querySelector('#generate');
 const $choices = document.querySelector('#choose-combo');
+const $question = document.querySelector('.question');
+const $cross = document.querySelector('.cross');
+const $howItWorks = document.querySelector('#how-it-works');
+
+$question.addEventListener('click', () => {
+  $howItWorks.className = '';
+});
+
+$cross.addEventListener('click', () => {
+  $howItWorks.className = 'hide';
+});
 
 const chooseEvent = (chosenType) => () => {
   trumpChain = new Markov(trainingData + '\n' + data[chosenType]);

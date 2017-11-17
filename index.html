@@ -6,6 +6,12 @@
     <meta content="author" description="Pusher of codes">
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
     <style>
+
+body {
+  margin: 0;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
 html, body, #app {
   height: 100%;
 }
@@ -17,7 +23,6 @@ html, body, #app {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Barlow Condensed', sans-serif;
 }
 
 .hide {
@@ -88,9 +93,72 @@ html, body, #app {
   margin-bottom: 20px;
   font-size: 4vh;
 }
+
+#how-it-works {
+  position: absolute;
+  background-color: rgba(0,0,0,0.9);
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#how-main {
+  flex-direction: column;
+  display: flex;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+}
+
+#how-main h1 {
+  font-size: 6vh;
+  text-align: center;
+}
+
+#how-main .how-body {
+  display: block;
+  font-size: 5vmin;
+}
+
+.how-body a {
+  color: #fff;
+}
+
+.cross {
+  position: absolute;
+  font-size: 8vmin;
+  right: 40px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.question {
+  position: absolute;
+  font-size: 8vmin;
+  right: 40px;
+  top: 20px;
+  cursor: pointer;
+}
+
     </style>
   </head>
   <body>
+    <div class="question">?</div>
+    <div id="how-it-works" class="hide">
+      <div class="cross">✕</div>
+      <div id="how-main">
+        <h1>How it works</h1>
+        <div class="how-body">
+          TrumpChain takes speech data from Trump and others, and then feeds that data to a <a href="https://en.wikipedia.org/wiki/Markov_chain" target="_blank">Markov Chain</a>, which is 
+          a memoryless state machine that transitions probabalistically from word to word based on how often those transitions came in the training data.<br>
+          Basically, if you put in some Trump and some Hitler, you'll get something which is a bit like both. This can lead to some hilarious results.<br>
+          TrumpChain was developed by <a href="https://francisstokes.wordpress.com/" target="_blank">Francis Stokes</a>, and is <a href="https://github.com/francisrstokes/trump-chain/tree/gh-pages" target="_blank">open source on github</a>.
+        </div>
+      </div>
+    </div>
     <div id="app">
       <div id="choose-combo">
         <h1>Combine Trump + ?</h1>
